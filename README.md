@@ -15,4 +15,6 @@ A small and evolving set of signal-layer utilities I use as reusable building bl
 Open `oscToolkit/oscToolkit.maxpat` as the entry patch.
 All modules and JS dependencies are loaded locally from the same folder.
 
-Tested in Max 8/9.
+## Requirements
+- Max 8 / 9  
+- Optional: [ease](https://github.com/Cycling74/ease) package, [Node for Max](https://cycling74.com/articles/node-for-max-intro-%E2%80%93-let%E2%80%99s-get-started) (not strictly required)
