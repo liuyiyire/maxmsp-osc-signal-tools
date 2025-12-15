@@ -11,5 +11,4 @@ A small and evolving set of signal-layer utilities I use as reusable building bl
 - Energy Accumulation (motion-driven boost with temporal decay)
 - Temporal Dampers: EMA / Spring / asymmetric Attack–Release
 
-
-## Tested in Max 8/9.
+Tested in Max 8/9.
