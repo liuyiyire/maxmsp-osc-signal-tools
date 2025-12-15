@@ -1,0 +1,38 @@
+// EMA_Damper.js
+// inlet 0: target value (0..1)
+// inlet 1: damping (0..1)  → smaller = heavier
+// outlet 0: damped output (0..1)
+
+inlets = 2;
+outlets = 1;
+
+var target = 0.0;
+var y = 0.0;
+
+// default damping
+var alpha = 0.15;
+
+// clamp helper
+function clamp(x) {
+    if (x < 0) return 0;
+    if (x > 1) return 1;
+    return x;
+}
+
+// inlet 0: input value
+function msg_float(v) {
+    if (inlet === 0) {
+        target = clamp(v);
+    }
+    else if (inlet === 1) {
+        // damping control
+        // v: 0..1 → alpha: 0.01..0.5
+        alpha = 0.01 + clamp(v) * 0.49;
+    }
+}
+
+// call this every frame (metro / qmetro / bang)
+function bang() {
+    y = alpha * target + (1 - alpha) * y;
+    outlet(0, y);
+}
